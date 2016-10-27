@@ -5,8 +5,8 @@
   <title>Banner demo</title>
   <style>
     #banner {
-    background-color: #406;
- //   background-image: url('Red_onions.jpg');
+      background-color: #406;
+   // background-color: #FFEBFF;
     background-size: cover;
     background-opacity: 10%;
       width: 100%;
@@ -35,19 +35,16 @@
         background-size: cover;
     }
     #banner-contents-container {
-//        background-color: red;
         position: relative;
         width: 900px;
         height: 100%;
         display: flex;
         flex-direction: row;
         align-items: center;
-//        background-image: url('onion-heart.svg');
-//        background-repeat: no-repeat;
-//        background-size: auto 250px;
     }
     #banner-text {
         color: white;
+        //color: #408;
         display: inline-block;
         flex-grow: 1.0;
         letter-spacing: -0.04em;
@@ -68,10 +65,10 @@
         height: 240px;
     }
     #donate-button-container {
-        transform: translatey(70px);
+        transform: translatey(60px);
+        text-decoration: none;
     }
     #donate-button-container a {
-        text-decoration: none;
     }
     #donate-button-container a:link {
         color: #A20;
@@ -87,16 +84,17 @@
     }
     #donate-button {
         background-color: #FFD;
-        border-bottom: 5px solid #204;
+        border-bottom: 8px solid #204;
         border-left: 10px solid #204;
-        border-radius: 45px;
-        border-right: 10px solid #204;
-        border-top: 5px solid #204;
+        border-right: 6px solid #204;
+        border-top: 6px solid #204;
+        border-bottom-right-radius: 45px;
+        border-top-right-radius: 45px;
         color: #A20;
         display: table-cell;
         flex-grow: 0.0;
         font-family: sans;
-        font-size: 24px;
+        font-size: 25px;
         font-weight: bold;
         height: 70px;
         width: 240px;
