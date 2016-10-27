@@ -55,7 +55,7 @@
         margin: 0px 20px 0px 20px;
         transform: scale(1.05, 1.19);
         font-family: sans-serif;
-        font-size: 27px;
+        font-size: 29px;
     }
     #logo-container {
         position: relative;
@@ -70,32 +70,6 @@
     #donate-button-container {
         transform: translatey(70px);
     }
-    #donate-button {
-        position: relative;
-        background-color: #FFD;
-        padding: 10px;
-        padding-left: 15px;
-        padding-right: 15px;
-        padding-top: 10px;
-        padding-bottom: 10px;
-        height: 70px;
-        color: #A20;
-        font-family: sans;
-        font-size: 28px;
-        font-weight: bold;
-        text-align: left;
-        letter-spacing: -0.05em;
-        transform: scale(1, 1.05);
-        opacity: 100%;
-        border-top: 5px solid #204;
-        border-bottom: 5px solid #204;
-        border-right: 5px solid #204;
-        border-left: 5px solid #204;
-        border-radius: 45px;
-        flex-grow: 0.0;
-        height: 70px;
-    }
-
     #donate-button-container a {
         text-decoration: none;
     }
@@ -111,6 +85,31 @@
     #donate-button-container a:active {
         color: black;
     }
+    #donate-button {
+        background-color: #FFD;
+        border-bottom: 5px solid #204;
+        border-left: 10px solid #204;
+        border-radius: 45px;
+        border-right: 10px solid #204;
+        border-top: 5px solid #204;
+        color: #A20;
+        display: table-cell;
+        flex-grow: 0.0;
+        font-family: sans;
+        font-size: 24px;
+        font-weight: bold;
+        height: 70px;
+        width: 240px;
+        letter-spacing: -0.05em;
+        opacity: 100%;
+        padding-bottom: 5px;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 5px;
+        text-align: left;
+        transform: scale(1, 1.05);
+        vertical-align: middle;
+    }
   </style>
  </head>
  <body>
@@ -124,8 +123,8 @@
     </div>
     <div id="donate-button-container">
      <a href="https://torproject.org/donate?blah">
-      <div id="donate-button" style="text-decoration:none;">
-       Please donate &#187;
+      <div id="donate-button">
+        Please donate &#187;
       </div>
      </a>
     </div>
