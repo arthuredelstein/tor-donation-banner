@@ -37,10 +37,6 @@
         background-image: url('tor-roots-only.svg');
         opacity: 0.20;
     }
-    .onions-bg:before {
-        background-image: url('Red_onions.jpg');
-        opacity: 0.12;
-    }
     #banner-contents-container {
         position: relative;
         width: 900px;
@@ -137,7 +133,8 @@
   </div>
   <script>
     let banner = document.getElementById("banner");
-    if (Math.random() > 0.5) {
+    // Useful for future options
+    if (Math.random() > 0) {
       banner.setAttribute("class", "root-bg");
     }
    </script>
