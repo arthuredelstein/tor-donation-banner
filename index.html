@@ -47,6 +47,7 @@
     }
     #banner-text {
         color: white;
+//        background-color: red;
         //color: #408;
         display: inline-block;
         flex-grow: 1.0;
@@ -56,7 +57,7 @@
         transform: scale(1.05, 1.19);
         font-family: sans-serif;
         font-size: 40px;
-        max-height: 80%;
+        max-height: 100%;
     }
     #logo-container {
         position: relative;
@@ -65,8 +66,9 @@
     }
     #logo {
         position: relative;
-//        top: -60px;
+        // top: -60px;
         height: 240px;
+        width: 167px;
     }
     #donate-button-container {
         transform: translatey(60px);
@@ -98,9 +100,9 @@
         display: table-cell;
         flex-grow: 0.0;
         font-family: sans;
-        font-size: 27px;
+        font-size: 67px;
         font-weight: bold;
-        height: 70px;
+        max-height: 80px;
         width: 270px;
         letter-spacing: -0.00em;
         opacity: 100%;
@@ -126,7 +128,7 @@
     <div id="donate-button-container">
      <a href="https://torproject.org/donate?blah">
       <div id="donate-button">
-        Please donate &#187;
+        Please donate&nbsp;&#187;
       </div>
      </a>
     </div>
@@ -156,15 +158,17 @@
         scaleFontBy(element, ratio);
       } else {
         // Look for vertical overflow.
-        let elementHeight = element.clientHeight,
+        let elementHeight = Math.min(element.clientHeight,
+                                     parseFloat(style.maxHeight)),
             paddingHeight = parseFloat(style.paddingTop) +
-            parseFloat(style.paddingBottom),
+                            parseFloat(style.paddingBottom),
             targetHeight = elementHeight - paddingHeight;
         // Wrapping causes somewhat difficult-to-predict overflow.
         // So shrink slightly and repeat.
         let ratio = 0;
         for (let i = 0; i < 100 && ratio < 1; ++i) {
           let currentHeight = element.scrollHeight;
+//          console.log(`currentHeight: ${currentHeight}, targetHeight: ${targetHeight}, fontSize: ${style.fontSize}`);
           ratio = targetHeight < currentHeight ? 0.99 : 1;
           if (ratio < 1) {
             scaleFontBy(element, ratio);
@@ -176,6 +180,9 @@
 
     let bannerText = document.getElementById("banner-text");
     fitTextInElement(bannerText);
+
+    let donateButton = document.getElementById("donate-button");
+    fitTextInElement(donateButton);
 
     let banner = document.getElementById("banner");
 
