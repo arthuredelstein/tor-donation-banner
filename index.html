@@ -5,7 +5,8 @@
   <title>Banner demo</title>
   <style>
     #banner {
-      background-color: #406;
+    background-color: #406;
+    background: radial-gradient(circle, #406 90%, #203 100%);
    // background-color: #FFEBFF;
     background-size: cover;
     background-opacity: 10%;
@@ -28,11 +29,17 @@
         top: 0;
         width: 100%;
         height: 100%;
-        opacity: 0.15;
-        background-image: url('Red_onions.jpg');
         background-repeat: no-repeat;
         background-position: 50% 50%;
         background-size: cover;
+    }
+    .root-bg:before {
+        background-image: url('tor-roots-only.svg');
+        opacity: 0.25;
+    }
+    .onions-bg:before {
+        background-image: url('Red_onions.jpg');
+        opacity: 0.12;
     }
     #banner-contents-container {
         position: relative;
@@ -111,7 +118,7 @@
   </style>
  </head>
  <body>
-  <div id="banner">
+  <div id="banner" class="onions-bg">
    <div id="banner-contents-container">
     <div id="logo-container">
      <img id="logo" src="onion-heart.svg">
@@ -128,5 +135,11 @@
     </div>
    </div>
   </div>
+  <script>
+    let banner = document.getElementById("banner");
+    if (Math.random() > 0.5) {
+      banner.setAttribute("class", "root-bg");
+    }
+   </script>
  </body>
 </html>
