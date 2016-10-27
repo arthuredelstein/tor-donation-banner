@@ -176,7 +176,7 @@
         let ratio = 0;
         for (let i = 0; i < 100 && ratio < 1; ++i) {
           let currentHeight = element.scrollHeight;
-//          console.log(`currentHeight: ${currentHeight}, targetHeight: ${targetHeight}, fontSize: ${style.fontSize}`);
+          console.log(`currentHeight: ${currentHeight}, targetHeight: ${targetHeight}, fontSize: ${style.fontSize}`);
           ratio = targetHeight < currentHeight ? 0.99 : 1;
           if (ratio < 1) {
             scaleFontBy(element, ratio);
