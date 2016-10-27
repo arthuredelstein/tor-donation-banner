@@ -5,67 +5,60 @@
   <title>Banner demo</title>
   <style>
     #banner {
-    background-color: #406;
-    background: radial-gradient(circle, #406 90%, #203 100%);
-   // background-color: #FFEBFF;
-    background-size: cover;
-    background-opacity: 10%;
-      width: 100%;
-      height: 150px;
-      position: absolute;
-      left: 0px;
-      margin-top: 40px;
-      border-top: 6px solid #305;
-      border-bottom:  8px solid #305;
-      display: flex;
-      justify-content: center;
-      opacity: 1;
-      -webkit-touch-callout: none; /* iOS Safari */
-      -webkit-user-select: none;   /* Chrome/Safari/Opera */
       -khtml-user-select: none;    /* Konqueror */
       -moz-user-select: none;      /* Firefox */
       -ms-user-select: none;       /* Internet Explorer/Edge */
+      -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none;   /* Chrome/Safari/Opera */
+      background-color: #406;
+      background-opacity: 10%;
+      background-size: cover;
+      background: radial-gradient(circle, #406 90%, #203 100%);
+      border-bottom:  8px solid #305;
+      border-top: 6px solid #305;
+      display: flex;
+      height: 150px;
+      justify-content: center;
+      left: 0px;
+      margin-top: 40px;
+      opacity: 1;
+      position: absolute;
       user-select: none;           /* Non-prefixed version, currently not supported by any browser */
+      width: 100%;
     }
     #banner:before {
         background-image: url('tor-roots-only.svg');
-        opacity: 0.20;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        background-size: cover;
         content: ' ';
         display: block;
-        position: absolute;
+        height: 100%;
         left: 0;
+        opacity: 0.20;
+        position: absolute;
         top: 0;
         width: 100%;
-        height: 100%;
-        background-repeat: no-repeat;
-        background-position: 50% 50%;
-        background-size: cover;
-
-    }
-    .root-bg:before {
     }
     #banner-contents-container {
-        position: relative;
-        width: 900px;
-        height: 100%;
+        align-items: center;
         display: flex;
         flex-direction: row;
-        align-items: center;
+        height: 100%;
+        position: relative;
+        width: 900px;
     }
     #banner-text {
+        -moz-user-select: none;
         color: white;
-//        background-color: red;
-        //color: #408;
         display: inline-block;
         flex-grow: 1.0;
-        letter-spacing: -0.00em;
-        font-weight: 600;
-        margin: 0px 15px 0px 25px;
-//        transform: scale(1.05, 1.19);
         font-family: sans-serif;
         font-size: 40px;
-        max-height: 100%;
-        -moz-user-select: none;
+        font-weight: 600;
+        letter-spacing: -0.00em;
+        margin: 0px 15px 0px 25px;
+        max-height: 90%;
     }
     #logo-container {
         position: relative;
@@ -78,48 +71,49 @@
         height: 240px;
         width: 167px;
     }
-    #donate-button-container {
-        transform: translatey(60px);
+    #donate-button-link {
         text-decoration: none;
     }
-    #donate-button-container a {
-    }
-    #donate-button-container a:link {
+    #donate-button-link:link {
         color: #A20;
     }
-    #donate-button-container a:hover {
+    #donate-button-link:hover {
         color: #C40;
     }
-    #donate-button-container a:visited {
+    #donate-button-link:visited {
         color: #408;
     }
-    #donate-button-container a:active {
+    #donate-button-linka:active {
         color: black;
     }
-    #donate-button {
+    #donate-button-container {
         background-color: #FFD;
+        border-bottom-right-radius: 45px;
         border-bottom: 8px solid #204;
         border-left: 6px solid #204;
         border-right: 6px solid #204;
-        border-top: 6px solid #204;
-        border-bottom-right-radius: 45px;
         border-top-right-radius: 45px;
+        border-top: 6px solid #204;
         color: #A20;
-        display: table-cell;
+        display: block;
         flex-grow: 0.0;
-        font-family: sans;
-        font-size: 25px;
-        font-weight: bold;
-        max-height: 80px;
-        width: 270px;
+        height: 60px;
         letter-spacing: -0.00em;
         opacity: 100%;
         padding-bottom: 5px;
         padding-left: 20px;
-        padding-right: 20px;
+        padding-right: 50px;
         padding-top: 5px;
+        transform: translatey(70px);
+        width: 100px;
+    }
+    #donate-button {
         text-align: left;
-        transform: scale(1, 1.05);
+        max-width: 100%;
+        max-height: 100%;
+        font-family: sans;
+        font-size: 60px;
+        font-weight: bold;
         vertical-align: middle;
     }
   </style>
@@ -131,15 +125,15 @@
      <img id="logo" src="onion-heart.svg">
     </div>
     <div id="banner-text">
-     The Tor Project needs your support to continue its important work! More persuasive text goes here.
+     The Tor Project needs your support to continue its work protecting privacy! More persuasive text goes here.
     </div>
-    <div id="donate-button-container">
-     <a href="https://torproject.org/donate?blah">
+    <a id="donate-button-link" href="https://torproject.org/donate?blah">
+     <div id="donate-button-container">
       <div id="donate-button">
-        Please donate&nbsp;&#187;
+       Please donate&nbsp;&#187;
       </div>
-     </a>
-    </div>
+     </div>
+    </a>
    </div>
   </div>
   <script>
@@ -153,6 +147,7 @@
 
     // Shrink the font size if the text in the given element is overflowing.
     let fitTextInElement = function(element) {
+      element.style.fontSize = "60px";
       let style = window.getComputedStyle(element);
       if (style.whiteSpace === "nowrap") {
         // Look for horizontal overflow.
@@ -176,7 +171,7 @@
         let ratio = 0;
         for (let i = 0; i < 100 && ratio < 1; ++i) {
           let currentHeight = element.scrollHeight;
-          console.log(`currentHeight: ${currentHeight}, targetHeight: ${targetHeight}, fontSize: ${style.fontSize}`);
+          //console.log(`currentHeight: ${currentHeight}, targetHeight: ${targetHeight}, fontSize: ${style.fontSize}`);
           ratio = targetHeight < currentHeight ? 0.99 : 1;
           if (ratio < 1) {
             scaleFontBy(element, ratio);
@@ -185,19 +180,15 @@
       }
     };
 
+    let updateTextSizes = function () {
+      let bannerText = document.getElementById("banner-text");
+      fitTextInElement(bannerText);
+      let donateButton = document.getElementById("donate-button");
+      fitTextInElement(donateButton);
+    }
 
-    let bannerText = document.getElementById("banner-text");
-    fitTextInElement(bannerText);
-
-//    let donateButton = document.getElementById("donate-button");
-//    fitTextInElement(donateButton);
-
-    let banner = document.getElementById("banner");
-
-    // Useful for future options
-    //if (Math.random() > 0) {
-      banner.setAttribute("class", "root-bg");
-    //}
-   </script>
+    addEventListener("resize", updateTextSizes);
+    updateTextSizes();
+</script>
  </body>
 </html>
