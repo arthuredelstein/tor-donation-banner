@@ -99,11 +99,11 @@
     width: 80px;
 }
 #banner-donate-button {
-    text-align: left;
-    max-width: 100%;
-    max-height: 100%;
     font-family: sans-serif;
     font-size: 60px;
     font-weight: bold;
+    max-height: 100%;
+    max-width: 100%;
+    text-align: left;
     vertical-align: middle;
 }
