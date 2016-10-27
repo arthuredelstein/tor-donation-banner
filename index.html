@@ -14,16 +14,16 @@
       background-opacity: 10%;
       background-size: cover;
       background: radial-gradient(circle, #406 90%, #203 100%);
-      border-bottom:  8px solid #305;
-      border-top: 6px solid #305;
+      border-bottom:  6px solid #305;
+      border-top: 5px solid #305;
       display: flex;
-      height: 150px;
+      height: 120px;
       justify-content: center;
       left: 0px;
       margin-top: 40px;
       opacity: 1;
       position: absolute;
-      user-select: none;           /* Non-prefixed version, currently not supported by any browser */
+      user-select: none;
       width: 100%;
     }
     #banner:before {
@@ -46,68 +46,65 @@
         flex-direction: row;
         height: 100%;
         position: relative;
-        width: 900px;
+        width: 700px;
     }
     #banner-text {
-        -moz-user-select: none;
         color: white;
         display: inline-block;
         flex-grow: 1.0;
         font-family: sans-serif;
-        font-size: 40px;
-        //font-weight: 600;
+        font-size: 48px;
         letter-spacing: -0.00em;
-        margin: 0px 15px 0px 25px;
+        margin: 0px 10px 0px 20px;
         max-height: 90%;
     }
-    #logo-container {
-        position: relative;
+    #banner-logo-container {
         display: inline-block;
         margin: 0px;
-    }
-    #logo {
         position: relative;
-        // top: -60px;
-        height: 240px;
-        width: 167px;
     }
-    #donate-button-link {
+    #banner-logo {
+        height: 200px;
+        position: relative;
+        width: 139px;
+    }
+    #banner-donate-button-link {
         text-decoration: none;
     }
-    #donate-button-link:link {
+    #banner-donate-button-link:link {
         color: #A20;
     }
-    #donate-button-link:hover {
+    #banner-donate-button-link:hover {
         color: #C40;
     }
-    #donate-button-link:visited {
+    #banner-donate-button-link:visited {
         color: #408;
     }
-    #donate-button-linka:active {
+    #banner-donate-button-linka:active {
         color: black;
     }
-    #donate-button-container {
+    #banner-donate-button-container {
         background-color: #FFD;
         border-bottom-right-radius: 45px;
-        border-bottom: 8px solid #204;
-        border-left: 6px solid #204;
-        border-right: 6px solid #204;
+        border-bottom: 6px solid #204;
+        border-left: 4px solid #204;
+        border-right: 4px solid #204;
         border-top-right-radius: 45px;
-        border-top: 6px solid #204;
+        border-top: 4px solid #204;
         color: #A20;
         display: block;
         flex-grow: 0.0;
-        height: 60px;
+        height: 50px;
         letter-spacing: -0.00em;
         opacity: 100%;
         padding-bottom: 5px;
-        padding-left: 20px;
+        padding-left: 15px;
         padding-right: 50px;
         padding-top: 5px;
-        transform: translatey(70px);
-        width: 100px;
+        transform: translatey(55px);
+        width: 80px;
     }
-    #donate-button {
+    #banner-donate-button {
         text-align: left;
         max-width: 100%;
         max-height: 100%;
@@ -121,16 +118,16 @@
  <body>
   <div id="banner" class="onions-bg">
    <div id="banner-contents-container">
-    <div id="logo-container">
-     <img id="logo" src="onion-heart.svg">
+    <div id="banner-logo-container">
+     <img id="banner-logo" src="onion-heart.svg">
     </div>
     <div id="banner-text">
-     The Tor Project needs your support to continue its work on state-of-the-art online privacy!
+     The Tor Project needs your support to continue its work on state-of-the-art privacy!
     </div>
-    <a id="donate-button-link" href="https://torproject.org/donate?blah">
-     <div id="donate-button-container">
-      <div id="donate-button">
-       Please donate&nbsp;&#187;
+    <a id="banner-donate-button-link" href="https://torproject.org/donate?blah">
+     <div id="banner-donate-button-container">
+      <div id="banner-donate-button">
+       Donate now!&nbsp;&#187;
       </div>
      </div>
     </a>
@@ -183,7 +180,7 @@
     let updateTextSizes = function () {
       let bannerText = document.getElementById("banner-text");
       fitTextInElement(bannerText);
-      let donateButton = document.getElementById("donate-button");
+      let donateButton = document.getElementById("banner-donate-button");
       fitTextInElement(donateButton);
     }
 
