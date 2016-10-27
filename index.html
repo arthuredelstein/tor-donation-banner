@@ -61,7 +61,7 @@
         letter-spacing: -0.00em;
         font-weight: 600;
         margin: 0px 15px 0px 25px;
-        transform: scale(1.05, 1.19);
+//        transform: scale(1.05, 1.19);
         font-family: sans-serif;
         font-size: 40px;
         max-height: 100%;
@@ -108,7 +108,7 @@
         display: table-cell;
         flex-grow: 0.0;
         font-family: sans;
-        font-size: 67px;
+        font-size: 25px;
         font-weight: bold;
         max-height: 80px;
         width: 270px;
@@ -166,8 +166,8 @@
         scaleFontBy(element, ratio);
       } else {
         // Look for vertical overflow.
-        let elementHeight = Math.min(element.clientHeight,
-                                     parseFloat(style.maxHeight)),
+        let elementHeight = element.clientHeight,// parentElement
+                                  // .getBoundingClientRect().height,
             paddingHeight = parseFloat(style.paddingTop) +
                             parseFloat(style.paddingBottom),
             targetHeight = elementHeight - paddingHeight;
@@ -189,8 +189,8 @@
     let bannerText = document.getElementById("banner-text");
     fitTextInElement(bannerText);
 
-    let donateButton = document.getElementById("donate-button");
-    fitTextInElement(donateButton);
+//    let donateButton = document.getElementById("donate-button");
+//    fitTextInElement(donateButton);
 
     let banner = document.getElementById("banner");
 
