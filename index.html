@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf8"/>
+  <title>Banner demo</title>
+  <style>
+    #banner {
+    background-color: #406;
+ //   background-image: url('Red_onions.jpg');
+    background-size: cover;
+    background-opacity: 10%;
+      width: 100%;
+      height: 150px;
+      position: absolute;
+      left: 0px;
+      margin-top: 50px;
+      border-top: 6px solid #305;
+      border-bottom:  8px solid #305;
+      display: flex;
+      justify-content: center;
+      opacity: 1;
+    }
+    #banner:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.15;
+        background-image: url('Red_onions.jpg');
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-size: cover;
+    }
+    #banner-contents-container {
+//        background-color: red;
+        position: relative;
+        width: 900px;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+//        background-image: url('onion-heart.svg');
+//        background-repeat: no-repeat;
+//        background-size: auto 250px;
+    }
+    #banner-text {
+        color: white;
+        display: inline-block;
+        flex-grow: 1.0;
+        letter-spacing: -0.04em;
+        font-weight: 600;
+        margin: 0px 20px 0px 20px;
+        transform: scale(1.05, 1.19);
+        font-family: sans-serif;
+        font-size: 27px;
+    }
+    #logo-container {
+        position: relative;
+        display: inline-block;
+        margin: 0px;
+    }
+    #logo {
+        position: relative;
+//        top: -60px;
+        height: 240px;
+    }
+    #donate-button-container {
+        transform: translatey(70px);
+    }
+    #donate-button {
+        position: relative;
+        background-color: #FFD;
+        padding: 10px;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        height: 70px;
+        color: #A20;
+        font-family: sans;
+        font-size: 28px;
+        font-weight: bold;
+        text-align: left;
+        letter-spacing: -0.05em;
+        transform: scale(1, 1.05);
+        opacity: 100%;
+        border-top: 5px solid #204;
+        border-bottom: 5px solid #204;
+        border-right: 5px solid #204;
+        border-left: 5px solid #204;
+        border-radius: 45px;
+        flex-grow: 0.0;
+        height: 70px;
+    }
+
+    #donate-button-container a {
+        text-decoration: none;
+    }
+    #donate-button-container a:link {
+        color: #A20;
+    }
+    #donate-button-container a:hover {
+        color: #C40;
+    }
+    #donate-button-container a:visited {
+        color: #408;
+    }
+    #donate-button-container a:active {
+        color: black;
+    }
+  </style>
+ </head>
+ <body>
+  <div id="banner">
+   <div id="banner-contents-container">
+    <div id="logo-container">
+     <img id="logo" src="onion-heart.svg">
+    </div>
+    <div id="banner-text">
+     Fixing a hole in the ocean. Trying to make a dovetail joint, yeah. Looking through a glass onion.
+    </div>
+    <div id="donate-button-container">
+     <a href="https://torproject.org/donate?blah">
+      <div id="donate-button" style="text-decoration:none;">
+       Please donate &#187;
+      </div>
+     </a>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>
